@@ -1,0 +1,18 @@
+.canvasContainer {
+  position: relative;
+  width: min(100%, 80vh);
+  margin: auto;
+}
+
+.canvasContainer::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.canvasInnerContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}

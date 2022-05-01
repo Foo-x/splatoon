@@ -2915,6 +2915,10 @@ export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SeoQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, siteUrl?: string | null } | null } | null, ogp?: { publicURL?: string | null } | null };
 
+export type GonzuiNawabariQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GonzuiNawabariQuery = { path?: { publicURL?: string | null } | null };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
