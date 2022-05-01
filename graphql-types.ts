@@ -266,7 +266,6 @@ export type SiteBuildTimeArgs = {
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
 };
 
@@ -1650,7 +1649,6 @@ export type DirectorySortInput = {
 export type SiteSiteMetadataFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
-  author?: InputMaybe<StringQueryOperatorInput>;
   siteUrl?: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -1703,7 +1701,6 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
-  | 'siteMetadata___author'
   | 'siteMetadata___siteUrl'
   | 'port'
   | 'host'
@@ -2916,7 +2913,8 @@ export type SiteTitleQuery = { site?: { siteMetadata?: { title?: string | null }
 export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SeoQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, author?: string | null } | null } | null };
+export type SeoQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, siteUrl?: string | null } | null } | null, ogp?: { publicURL?: string | null } | null };
+
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

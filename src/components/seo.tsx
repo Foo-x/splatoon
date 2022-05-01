@@ -17,31 +17,46 @@ type Props = {
   title?: string;
 };
 
-const Seo: React.FC<Props> = ({ description, lang, meta = [], title }) => {
-  const { site } = useStaticQuery<SeoQuery>(
+const Seo: React.FC<Props> = ({
+  description,
+  lang = 'ja',
+  meta = [],
+  title,
+}) => {
+  const { site, ogp } = useStaticQuery<SeoQuery>(
     graphql`
       query Seo {
         site {
           siteMetadata {
             title
             description
-            author
+            siteUrl
           }
+        }
+        ogp: file(
+          sourceInstanceName: { eq: "images" }
+          relativePath: { eq: "ogp.png" }
+        ) {
+          publicURL
         }
       }
     `
   );
 
   const metaDescription = description ?? site?.siteMetadata?.description ?? '';
-  const defaultTitle = site?.siteMetadata?.title;
+  const defaultTitle = site?.siteMetadata?.title ?? '';
+  const actualTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+  const ogpImage =
+    site?.siteMetadata?.siteUrl && ogp?.publicURL
+      ? site.siteMetadata.siteUrl + ogp.publicURL
+      : '';
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      title={actualTitle}
       meta={[
         ...[
           {
@@ -50,7 +65,7 @@ const Seo: React.FC<Props> = ({ description, lang, meta = [], title }) => {
           },
           {
             property: `og:title`,
-            content: title,
+            content: actualTitle,
           },
           {
             property: `og:description`,
@@ -61,20 +76,12 @@ const Seo: React.FC<Props> = ({ description, lang, meta = [], title }) => {
             content: `website`,
           },
           {
+            property: `og:image`,
+            content: ogpImage,
+          },
+          {
             name: `twitter:card`,
             content: `summary`,
-          },
-          {
-            name: `twitter:creator`,
-            content: site?.siteMetadata?.author || ``,
-          },
-          {
-            name: `twitter:title`,
-            content: title,
-          },
-          {
-            name: `twitter:description`,
-            content: metaDescription,
           },
         ],
         ...meta,
