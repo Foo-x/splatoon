@@ -56,9 +56,7 @@
   --fontFamily-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Original Yu Gothic', 'Yu Gothic', Roboto, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --fontFamily-serif: 'Merriweather', 'Georgia', Cambria, 'Times New Roman',
-    Times, serif;
-  --font-body: var(--fontFamily-serif);
+  --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
