@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-4);
+  gap: var(--spacing-6);
   list-style: none;
   font-family: 'Arial Black';
   padding: 0;
@@ -49,6 +49,22 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 70%;
+}
+
+@media (max-width: 24em) {
+  .container {
+    gap: var(--spacing-4);
+  }
+
+  .iconActive {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .iconInactive {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 @media (hover: hover) {
