@@ -1,13 +1,11 @@
 import type { PageProps } from 'gatsby';
 import React from 'react';
-import NavTab from '~/components/navTab';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const IndexPage: React.FC<PageProps> = () => (
-  <Layout>
+  <Layout selectedCategory='map'>
     <Seo />
-    <NavTab selectedCategory='map' />
   </Layout>
 );
 
