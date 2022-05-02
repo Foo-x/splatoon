@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import * as styles from '~/styles/components/layout.module.css';
 import Header from './header';
 
 type Props = {
@@ -16,23 +17,8 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className={styles.container}>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href='https://www.gatsbyjs.com'>Gatsby</a>
-        </footer>
       </div>
     </>
   );
