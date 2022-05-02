@@ -6,7 +6,7 @@ import Seo from '../components/seo';
 
 const IndexPage: React.FC<PageProps> = () => (
   <Layout>
-    <Seo title='Home' />
+    <Seo />
     <NavTab selectedCategory='map' />
   </Layout>
 );
