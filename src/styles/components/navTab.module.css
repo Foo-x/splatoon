@@ -13,26 +13,35 @@
   flex-direction: column;
   align-items: center;
   color: var(--pccs-b18);
-  padding: var(--spacing-1);
-  border-bottom: solid 3px;
-  transition: opacity 0.2s;
 }
 
 .elementInactive {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--spacing-1);
-  transition: opacity 0.2s;
 }
 
-.content {
+.contentActive {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: var(--spacing-1);
+  border-bottom: solid 3px;
   color: inherit;
   cursor: pointer;
   text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.contentInactive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-1);
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
 .iconActive {
@@ -69,11 +78,11 @@
 }
 
 @media (hover: hover) {
-  .elementActive:hover {
+  .contentActive:hover {
     opacity: 0.5;
   }
 
-  .elementInactive:hover {
+  .contentInactive:hover {
     opacity: 0.5;
   }
 }

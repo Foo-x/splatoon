@@ -5,10 +5,7 @@
 
 .link {
   display: flex;
-  text-decoration: none;
-}
-
-.logo {
   width: 2rem;
   height: 2rem;
+  text-decoration: none;
 }

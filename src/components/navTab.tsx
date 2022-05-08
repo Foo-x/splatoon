@@ -68,7 +68,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     if (selectedCategory === 'map') {
       return (
         <li className={styles.elementActive}>
-          <div className={styles.content}>
+          <div className={styles.contentActive}>
             <img
               className={styles.iconActive}
               src={data.mapActive?.publicURL ?? ''}
@@ -84,7 +84,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     }
     return (
       <li className={styles.elementInactive}>
-        <div className={styles.content}>
+        <div className={styles.contentInactive}>
           <img
             className={styles.iconInactive}
             src={data.map?.publicURL ?? ''}
@@ -109,7 +109,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     if (selectedCategory === 'memo') {
       return (
         <li className={styles.elementActive}>
-          <Link to='memo' className={styles.content}>
+          <Link to='memo' className={styles.contentActive}>
             <img
               className={styles.iconActive}
               src={data.memoActive?.publicURL ?? ''}
@@ -125,7 +125,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     }
     return (
       <li className={styles.elementInactive}>
-        <Link to='memo' className={styles.content}>
+        <Link to='memo' className={styles.contentInactive}>
           <img
             className={styles.iconInactive}
             src={data.memo?.publicURL ?? ''}
@@ -150,7 +150,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     if (selectedCategory === 'about') {
       return (
         <li className={styles.elementActive}>
-          <Link to='about' className={styles.content}>
+          <Link to='about' className={styles.contentActive}>
             <img
               className={styles.iconActive}
               src={data.infoActive?.publicURL ?? ''}
@@ -166,7 +166,7 @@ const NavTab: React.FC<Props> = ({ selectedCategory }) => {
     }
     return (
       <li className={styles.elementInactive}>
-        <Link to='about' className={styles.content}>
+        <Link to='about' className={styles.contentInactive}>
           <img
             className={styles.iconInactive}
             src={data.info?.publicURL ?? ''}
